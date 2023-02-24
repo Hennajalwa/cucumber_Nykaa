@@ -7,7 +7,7 @@ import org.testng.annotations.DataProvider;
 
 
 @CucumberOptions(features ="src/test/resources/features",
-        glue = "steps",publish = true, tags = "@smoke")
+        glue = "steps",publish = true)
 public class TestRunner extends AbstractTestNGCucumberTests {
     @DataProvider(parallel = true)
     public Object[][] scenarios(){

@@ -15,9 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pages.NykaaPage;
-import utils.BrowserManager;
-import utils.QaProps;
-import utils.TestDataReader;
+import utils.*;
 
 import java.util.HashMap;
 
@@ -65,14 +63,14 @@ public class StepDefinition {
     public void the_user_able_to_click_on_the_face_icon() throws InterruptedException {
         WebElement face= nykaaPage.getFaceIcon();
         Assert.assertTrue(face.isDisplayed());
-        face.click();
+       ClickUtils.click(driver,face);
     }
 
 
     @Then("the user able to click on the face primer icon")
     public void the_user_able_to_click_on_the_face_primer_icon() {
         WebElement facePrimer= nykaaPage.getFacePrimerIcon();
-        facePrimer.click();
+        ClickUtils.click(driver,facePrimer);
 //    }
 //    @Then("the user selects Name")
 //    public void the_user_selects_name() {
@@ -90,19 +88,18 @@ public class StepDefinition {
     public void the_user_able_to_click_on_indian_wear_on_women_icon() {
         WebElement indianWear= nykaaPage.getIndianWear();
         Assert.assertTrue(indianWear.isDisplayed());
-        indianWear.click();
+        ClickUtils.click(driver,indianWear);
     }
 
     @Then("the user able to click on saree")
     public void the_user_able_to_click_on_saree() throws InterruptedException {
         url3 = QaProps.getValue("url3");
-        Thread.sleep(5000);
         driver.getCurrentUrl();
         driver.get(url3);
         currentWindow = driver.getWindowHandle();
         driver.switchTo().window(currentWindow);
         WebElement saree= nykaaPage.getSaree();
-        saree.click();
+        ClickUtils.click(driver,saree);
     }
     @Then("the user able to visible with saree items")
     public void the_user_able_to_visible_with_saree_items() {
@@ -112,11 +109,11 @@ public class StepDefinition {
     }
     @Then("the user able to click on recently added icon on whats new")
     public void the_user_able_to_click_on_recently_added_icon_on_whats_new() throws InterruptedException {
-        Thread.sleep(5000);
+        WaitUtils.waitTillVisible(driver,nykaaPage.getRecentlyadded());
         WebElement recentlyAdded= nykaaPage.getRecentlyadded();
         Assert.assertTrue(recentlyAdded.isDisplayed());
-        Thread.sleep(5000);
-        recentlyAdded.click();
+        ClickUtils.click(driver,recentlyAdded);
+
     }
 
     @Then("the use able to hover on men icon")
@@ -139,16 +136,15 @@ public class StepDefinition {
         nykaaPage= new NykaaPage( driver);
         action =new Actions(driver);
         action.moveToElement(nykaaPage.getMen()).build().perform();
-        Thread.sleep(5000);
+        WaitUtils.waitTillVisible(driver,nykaaPage.getWhatsNew());
         action.moveToElement(nykaaPage.getWhatsNew()).build().perform();
     }
     @Then("the user able to click on Decor in Home")
     public void the_user_able_to_click_on_decor_in_home() throws InterruptedException {
-        Thread.sleep(5000);
+        WaitUtils.waitTillVisible(driver,nykaaPage.getDecor());
         WebElement decor= nykaaPage.getDecor();
-        Thread.sleep(5000);
         Assert.assertTrue(decor.isDisplayed());
-        decor.click();
+        ClickUtils.click(driver,decor);
 
     }
 
@@ -156,7 +152,6 @@ public class StepDefinition {
     public void theUserSearchHomesakeOnSearchBar() throws InterruptedException {
         data = TestDataReader.getData(scenario.getName());
         url5= QaProps.getValue("url5");
-        Thread.sleep(5000);
         driver.get(url5);
         nykaaPage= new NykaaPage( driver);
         nykaaPage.getSearchbar().sendKeys(data.get("Typevalue"));
@@ -164,17 +159,15 @@ public class StepDefinition {
     }
     @Then("the user able to click on puma in top brands")
     public void the_user_able_to_click_on_puma_in_top_brands() throws InterruptedException {
-        Thread.sleep(5000);
+        WaitUtils.waitTillVisible(driver,nykaaPage.getPuma());
         WebElement puma = nykaaPage.getPuma();
-        Thread.sleep(5000);
         Assert.assertTrue(puma.isDisplayed());
-        puma.click();
+        ClickUtils.click(driver, puma);
     }
     @Then("the user search xhy on search bar")
     public void the_user_search_xhy_on_search_bar() throws InterruptedException {
         data = TestDataReader.getData(scenario.getName());
         url6= QaProps.getValue("url6");
-        Thread.sleep(5000);
         driver.get(url6);
         nykaaPage= new NykaaPage( driver);
         nykaaPage.getSearchbar().sendKeys(data.get("Typevalue"));
@@ -184,8 +177,9 @@ public class StepDefinition {
 
     @When("the user enters item name as {string}")
     public void theUserEntersItemNameAs(String arg0) throws InterruptedException {
-        Thread.sleep(5000);
         nykaaPage= new NykaaPage( driver);
+        WaitUtils.waitTillVisible(driver,nykaaPage.getNykaaSearch());
+//        nykaaPage= new NykaaPage( driver);
         WebElement b=nykaaPage.getNykaaSearch();
          b.sendKeys(arg0);
          b.sendKeys(Keys.ENTER);

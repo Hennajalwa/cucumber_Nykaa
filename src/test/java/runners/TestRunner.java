@@ -8,7 +8,7 @@ import org.testng.annotations.DataProvider;
 
 @CucumberOptions(features ="src/test/resources/features",
         glue = "steps",publish = true, plugin = {"pretty","html:target/cucumber_ny-reports.html","json:target/cucumber_ny-reports.json"}
-        ,monochrome =true,tags = "@smoke")
+        ,monochrome =true)
 public class TestRunner extends AbstractTestNGCucumberTests {
     @DataProvider(parallel = true)
     public Object[][] scenarios(){

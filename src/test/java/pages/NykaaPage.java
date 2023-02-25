@@ -1,5 +1,6 @@
 package pages;
 
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,100 +16,117 @@ public class NykaaPage {
     }
 
     @FindBy(xpath = "//li[@class=\"MegaDropdownHeadingbox\"][1]")
-    private WebElement makeupIcon;
+    @Getter
+    WebElement makeupIcon;
+
     @FindBy(xpath = "//a[text()='Face']")
-    private WebElement faceIcon;
+    @Getter
+    WebElement faceIcon;
     @FindBy(xpath = "\"//div[@class='css-ar51ef']\"")
-    private WebElement sortBy;
+    @Getter
+    WebElement sortBy;
     @FindBy(xpath = "(//div[@class=\"control-box css-1ap0cm9\"])[2]")
-    private WebElement discount;
+    @Getter
+    WebElement discount;
     @FindBy(xpath = "//a[@href=\"/makeup/face/face-primer/c/233?ptype=lst&id=233&root=nav_3&dir=desc&order=popularity\"]")
-            private WebElement facePrimerIcon;
+    @Getter
+    WebElement facePrimerIcon;
 
     @FindBy(xpath = "//div[@class=\"control-box css-1ap0cm9\"][3]")
-            private WebElement Name;
+    @Getter
+    WebElement Name;
     @FindBy(xpath = "//ul[@class=\"HeaderNav css-f7ogli\"][4]")
-    private WebElement NykaaFashion ;
+    @Getter
+    WebElement NykaaFashion;
     @FindBy(xpath = "//a[@href=\"https://www.nykaafashion.com/women/indianwear/c/4\"]")
-    private WebElement  IndianWear;
+    @Getter
+    WebElement IndianWear;
 
-//    @FindBy(xpath = "//a[@href=\"/women/c/6557?root=topnav_1\"]")
+    //    @FindBy(xpath = "//a[@href=\"/women/c/6557?root=topnav_1\"]")
 //    private WebElement  Women;
     @FindBy(xpath = "//div[@class=\"css-1ei6uu4\"]")
-    private WebElement  Saree;
+    @Getter
+    WebElement Saree;
     @FindBy(xpath = "//a[@href=\"https://www.nykaafashion.com/recently-added/c/4878\"]")
-    private WebElement Recentlyadded;
+    @Getter
+    WebElement Recentlyadded;
     @FindBy(xpath = "//a[@href=\"/men/c/6823?root=topnav_1\"]")
-    private WebElement  Men;
+    @Getter
+    WebElement Men;
     @FindBy(xpath = "(//button[@class=\"css-1l1c5a0\"])[1]")
-    private WebElement  WhatsNew;
+    @Getter
+    WebElement WhatsNew;
 
     @FindBy(xpath = "//a[@href=\"https://www.nykaafashion.com/home/decor/c/8594\"]")
-    private WebElement  decor;
+    @Getter
+    WebElement decor;
     @FindBy(xpath = "//input[@placeholder=\"Search for products, styles, brands\"]")
-    private WebElement  Searchbar;
+    @Getter
+    WebElement Searchbar;
     @FindBy(xpath = "(//a[text()='Puma'])[2]")
-    private WebElement  puma;
+    @Getter
+    WebElement puma;
 
     @FindBy(xpath = "//input[@placeholder=\"Search on Nykaa\"]")
-    private WebElement  nykaaSearch;
+    @Getter
+    WebElement nykaaSearch;
+}
+//    public WebElement getNykaaSearch() {
+//        return nykaaSearch;
+//    }
+//
+//    public WebElement getPuma() {
+//        return puma;
+//    } //16
 
-    public WebElement getNykaaSearch() {
-        return nykaaSearch;
-    }
-
-    public WebElement getPuma() {
-        return puma;
-    } //16
-
-    public WebElement getDecor() {
-        return decor;
-    }//14
-
-    public WebElement getSearchbar() {
-        return Searchbar;
-    }//15
-
-    public WebElement getNykaaFashion() {
-        return NykaaFashion;
-    } //7
-    public WebElement getIndianWear() {
-        return IndianWear;
-    } //8
+//    public WebElement getDecor() {
+//        return decor;
+//    }//14
+//
+//    public WebElement getSearchbar() {
+//        return Searchbar;
+//    }//15
+//
+//    public WebElement getNykaaFashion() {
+//        return NykaaFashion;
+//    } //7
+//    public WebElement getIndianWear() {
+//        return IndianWear;
+//    } //8
 //    public WebElement getWomen() {
 //        return Women;
 //    } //9
-    public WebElement getSaree() {
-        return Saree;
-
-    } //10
-    public WebElement getFacePrimerIcon() {
-        return facePrimerIcon;
-    } //5
-    public WebElement getName() {
-        return Name;
-    } //6
-    public WebElement getMakeupIcon() {
-        return makeupIcon;
-    } //1
-    public WebElement getFaceIcon() {
-        return faceIcon;
-    } //2
-    public WebElement getSortBy() {
-        return sortBy;
-    }  //3
-    public WebElement getDiscount() {
-        return discount;
-    } //4
-    public WebElement getRecentlyadded() {
-        return Recentlyadded;
-    }//11
-
-    public WebElement getMen() {
-        return Men;
-    }//12
-
-    public WebElement getWhatsNew() {
-        return WhatsNew;
-    }//13
-}
+//    public WebElement getSaree() {
+//        return Saree;
+//
+//    } //10
+//    public WebElement getFacePrimerIcon() {
+//        return facePrimerIcon;
+//    } //5
+//    public WebElement getName() {
+//        return Name;
+//    } //6
+//    public WebElement getMakeupIcon() {
+//        return makeupIcon;
+//    } //1
+//    public WebElement getFaceIcon() {
+//        return faceIcon;
+//    } //2
+//    public WebElement getSortBy() {
+//        return sortBy;
+//    }  //3
+//    public WebElement getDiscount() {
+//        return discount;
+//    } //4
+//    public WebElement getRecentlyadded() {
+//        return Recentlyadded;
+//    }//11
+//
+//    public WebElement getMen() {
+//        return Men;
+//    }//12
+//
+//    public WebElement getWhatsNew() {
+//        return WhatsNew;
+//    }//13
+//}

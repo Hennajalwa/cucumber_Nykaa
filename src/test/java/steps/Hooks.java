@@ -37,8 +37,8 @@ public class Hooks {
             scenario.attach(src, "image/png", "screenshot");
         }}
 
-//    @After(order=0)
-//    public  void tearDown(){
-//    browserManager.getDriver().quit();
-//    }
+    @After(order=0)
+    public  void tearDown(){
+    browserManager.getDriver().quit();
+    }
 }

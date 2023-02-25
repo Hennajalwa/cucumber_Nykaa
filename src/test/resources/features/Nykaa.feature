@@ -15,7 +15,7 @@ Feature: Nykaa makeup and Nykaa fashion Feature
     When the user able to hover on  the makeup icon
     Then the user should get the drop down page of makeup
     And the user able to click on the face primer icon
-   
+
 
 
 
@@ -48,7 +48,7 @@ Feature: Nykaa makeup and Nykaa fashion Feature
       Then the user able to click on puma in top brands
       And the user search xhy on search bar
 
-
+  @smoke
   Scenario Outline: Verify the user search items in searchbar
   Given the user navigates to the home page
   When the user enters item name as "<itemname>"

@@ -185,8 +185,11 @@ public class StepDefinition {
          b.sendKeys(Keys.ENTER);
     }
 
-    @Then("the user get the searched items")
-    public void theUserGetTheSearchedItems() {
+    @Then("the user get the searched items {string}")
+    public void theUserGetTheSearchedItems(String arg0) {
+        WaitUtils.waitTillVisible(driver,nykaaPage.getSearchResult());
+        String text =nykaaPage.getSearchResult().getText();
+       Assert.assertEquals(text,arg0);
 
     }
 }

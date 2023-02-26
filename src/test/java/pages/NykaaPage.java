@@ -70,6 +70,10 @@ public class NykaaPage {
     @FindBy(xpath = "//input[@placeholder=\"Search on Nykaa\"]")
     @Getter
     WebElement nykaaSearch;
+
+    @FindBy(xpath = "//h1[@class=\"page-title-search\"]")
+    @Getter
+    WebElement searchResult;
 }
 //    public WebElement getNykaaSearch() {
 //        return nykaaSearch;

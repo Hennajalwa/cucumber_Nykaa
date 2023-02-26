@@ -48,14 +48,14 @@ Feature: Nykaa makeup and Nykaa fashion Feature
       Then the user able to click on puma in top brands
       And the user search xhy on search bar
 
-
+@smoke
   Scenario Outline: Verify the user search items in searchbar
   Given the user navigates to the home page
   When the user enters item name as "<itemname>"
-  Then the user get the searched items
+  Then the user get the searched items "<result>"
 
   Examples:
-  |itemname|
-  |adidas|
-  |foundation|
+  |itemname|result|
+  |adidas|adidas|
+  |foundation|foundation|
 
